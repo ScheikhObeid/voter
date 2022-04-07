@@ -1,0 +1,45 @@
+########## Tailwind gitignore ############
+
+/node_modules
+/coverage
+/cli
+/lib
+/peers
+/example
+.vscode
+.DS_Store
+tailwind.config.js
+yarn.lock
+yarn-error.log
+types/generated/*.d.ts
+
+# Perf related files
+isolate*.log
+
+# Generated files
+/src/corePluginList.js
+
+
+############### Vue.js gitignore ################
+
+.DS_Store
+node_modules/
+/dist/
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*

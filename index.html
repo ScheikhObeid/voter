@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <script
+      src="https://kit.fontawesome.com/525d308838.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Voter</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <!-- <div id="app">
+      <div class="container mx-auto m-2 p-1">
+        <div class="grid grid-cols-3 gap-1">
+          <div class="card">
+            <div>
+              <h2 class="text-lg bg-gray-200">Stimme jetzt ab!</h2>
+            </div>
+            <div class="flex">
+              <div class="shrink">
+                <img src="https://via.placeholder.com/150 " alt="" />
+              </div>
+              <div class="ml-1">
+                <h5>
+                  {{ submissions[0].title }}
+                  <span class="justify-items-end cursor-pointer"
+                    ><i class="fa-solid fa-angle-up"></i><strong>16</strong>
+                  </span>
+                </h5>
+                <div>{{ submissions[0].desc }}</div>
+                <small class="text-gray-400"
+                  >Eingereicht von: {{ submissions[0].author }}</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <strong>Card 2</strong>
+    <div class="w-full m-auto md:max-w-lg">
+      <div id="app" class="m-2">
+        <div class="m-2">
+          <h2 class="text-lg bg-gray-200 px-3">Stimm jetzt ab!</h2>
+        </div>
+        <div
+          class="flex justify-center mx-2 mb-2 flex-col md:flex-row rounded-lg bg-white shadow-lg"
+        >
+          <img
+            class="p-2 object-cover rounded-t-lg md:rounded-none md:rounded-l-lg"
+            src="https://via.placeholder.com/150 "
+            alt=""
+          />
+          <div class="w-full p-2 flex flex-col justify-start">
+            <div class="flex justify-between mb-2">
+              <p class="font-medium text-purple-600 text-md">
+                {{ submissions[0].title }}
+              </p>
+              <span class="font-medium text-purple-600 text-md"
+                ><i class="fa-solid fa-angle-up"></i
+                ><strong>{{ submissions[0].votes }}</strong></span
+              >
+            </div>
+            <p class="text-gray-700 mb-2">
+              {{ submissions[0].desc }}{{ submissions[0].desc }}
+            </p>
+            <p class="text-gray-600 text-xs">
+              Eingereicht von: {{ submissions[0].author }}
+            </p>
+
+            <button
+              type="button"
+              class="inline-block w-20 mt-4 px-4 py-1.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+              data-mdb-ripple="true"
+            >
+              Vote
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="seed.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
