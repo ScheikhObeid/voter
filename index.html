@@ -46,32 +46,34 @@
     <strong>Card 2</strong>
     <div class="w-full m-auto md:max-w-lg">
       <div id="app" class="m-2">
-        <div class="m-2">
+        <div class="m-2 flex justify-between">
           <h2 class="text-lg bg-gray-200 px-3">Stimm jetzt ab!</h2>
+          <span>{{ totalVotes }} Stimmen</span>
         </div>
         <div
           class="flex justify-center mx-2 mb-2 flex-col md:flex-row rounded-lg bg-white shadow-lg"
+          v-for="submission in submissions"
         >
           <img
-            class="p-2 object-cover rounded-t-lg md:rounded-none md:rounded-l-lg"
-            src="https://via.placeholder.com/150 "
+            class="p-2 md:w-64 object-cover rounded-t-lg md:rounded-none md:rounded-l-lg"
+            v-bind:src="submission.img"
             alt=""
           />
           <div class="w-full p-2 flex flex-col justify-start">
             <div class="flex justify-between mb-2">
               <p class="font-medium text-purple-600 text-md">
-                {{ submissions[0].title }}
+                {{ submission.title }}
               </p>
-              <span class="font-medium text-purple-600 text-md"
+              <span
+                class="font-medium text-purple-600 text-md"
+                v-on:click="upvote"
                 ><i class="fa-solid fa-angle-up"></i
-                ><strong>{{ submissions[0].votes }}</strong></span
+                ><strong class="ml-1">{{ submission.votes }}</strong></span
               >
             </div>
-            <p class="text-gray-700 mb-2">
-              {{ submissions[0].desc }}{{ submissions[0].desc }}
-            </p>
+            <p class="text-gray-700 mb-2">{{ submission.desc }}</p>
             <p class="text-gray-600 text-xs">
-              Eingereicht von: {{ submissions[0].author }}
+              Eingereicht von: {{ submission.author }}
             </p>
 
             <button
